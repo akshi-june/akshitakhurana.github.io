@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshita Khurana — Program Manager</title>
+<meta name="description" content="Program Manager with 12+ years leading enterprise AI, cloud, and platform programs. Currently leading GenAI delivery at Intact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5EFE6;
+    --cream-light: #FAF7F2;
+    --teal: #0F6E56;
+    --teal-soft: #9FE1CB;
+    --teal-pale: #E1F5EE;
+    --ink: #1F1D1A;
+    --text: #2C2C2A;
+    --muted: #6B6962;
+    --subtle: #9C998F;
+    --line: #E0D9CB;
+    --radius: 20px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream); color: var(--text); line-height: 1.65;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+
+  nav { position: sticky; top: 0; background: rgba(245, 239, 230, 0.85);
+    backdrop-filter: saturate(180%) blur(12px); -webkit-backdrop-filter: saturate(180%) blur(12px);
+    z-index: 100; border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
+  nav.scrolled { border-bottom-color: var(--line); }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 2rem; max-width: 1080px; margin: 0 auto; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+  .logo-mark { width: 36px; height: 36px; border-radius: 50%; background: var(--teal); color: var(--cream);
+    display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; }
+  .logo-name { font-size: 15px; font-weight: 500; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta { background: var(--ink); color: var(--cream); padding: 9px 18px; border-radius: 100px;
+    font-size: 13px; font-weight: 500; text-decoration: none; transition: all 0.2s ease; }
+  .nav-cta:hover { background: var(--teal); transform: translateY(-1px); }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  .hero { padding: 6rem 0 5rem; }
+  .hero-eyebrow { color: var(--teal); font-size: 13px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--teal); }
+  .hero h1 { font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; font-weight: 500;
+    letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.75rem; max-width: 18ch; }
+  .hero h1 em { font-style: italic; color: var(--teal); font-weight: 400; }
+  .hero-lede { font-size: 1.2rem; line-height: 1.6; color: var(--muted);
+    max-width: 600px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 4rem; }
+  .btn { padding: 14px 26px; border-radius: 100px; font-size: 14px;
+    font-weight: 500; text-decoration: none; transition: all 0.2s ease;
+    display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary { background: var(--ink); color: var(--cream); }
+  .btn-primary:hover { background: var(--teal); transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { background: var(--cream-light); border-color: var(--teal); }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px; margin-top: 3rem; }
+  .stat-card { background: var(--cream-light); padding: 1.5rem;
+    border-radius: var(--radius); border: 1px solid var(--line); }
+  .stat-card.feature { background: var(--teal); color: var(--cream); border-color: var(--teal); }
+  .stat-label { font-size: 11px; letter-spacing: 0.08em; color: var(--subtle);
+    margin-bottom: 8px; text-transform: uppercase; }
+  .stat-card.feature .stat-label { color: var(--teal-soft); }
+  .stat-value { font-family: 'Fraunces', Georgia, serif; font-size: 2rem;
+    font-weight: 500; line-height: 1; color: var(--ink); letter-spacing: -0.02em; }
+  .stat-card.feature .stat-value { color: var(--cream); font-size: 0.98rem; line-height: 1.45;
+    font-weight: 500; font-family: 'Inter', sans-serif; padding-top: 6px; }
+  .stat-suffix { font-size: 0.85rem; color: var(--muted); font-weight: 400; font-family: 'Inter', sans-serif; }
+
+  section { padding: 5rem 0; }
+  .section-eyebrow { color: var(--teal); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+  .section-title { font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.15; font-weight: 500;
+    letter-spacing: -0.015em; color: var(--ink); margin-bottom: 1.25rem; max-width: 22ch; }
+
+  .about { background: var(--cream-light); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+  @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } }
+  .about-prose p { font-size: 1.05rem; line-height: 1.75; color: var(--text); margin-bottom: 1.25rem; }
+  .about-prose p:last-child { margin-bottom: 0; }
+  .about-prose strong { color: var(--ink); font-weight: 500; }
+  .about-meta { background: var(--cream); border-radius: var(--radius);
+    padding: 1.75rem; border: 1px solid var(--line); }
+  .about-meta-item { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+  .about-meta-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .about-meta-item:first-child { padding-top: 0; }
+  .about-meta-label { font-size: 11px; letter-spacing: 0.08em; color: var(--subtle);
+    text-transform: uppercase; margin-bottom: 6px; }
+  .about-meta-value { font-size: 14px; color: var(--text); line-height: 1.5; }
+  .about-meta-value strong { color: var(--ink); font-weight: 500; }
+
+  .cases { padding-top: 6rem; }
+  .case-grid { display: grid; gap: 1.5rem; margin-top: 3rem; }
+  .case { background: var(--cream-light); border-radius: var(--radius);
+    padding: 2.5rem; border: 1px solid var(--line);
+    display: grid; grid-template-columns: 0.6fr 1fr; gap: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .case:hover { transform: translateY(-4px); box-shadow: 0 12px 40px -12px rgba(31, 29, 26, 0.15); }
+  @media (max-width: 720px) { .case { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; } }
+  .case-meta { display: flex; flex-direction: column; gap: 1rem; }
+  .case-tag { display: inline-block; background: var(--teal-pale); color: var(--teal);
+    font-size: 11px; font-weight: 500; padding: 5px 12px;
+    border-radius: 100px; letter-spacing: 0.04em; width: fit-content; }
+  .case-org { font-size: 13px; color: var(--muted); font-weight: 500; }
+  .case-metric { font-family: 'Fraunces', Georgia, serif; font-size: 2.2rem; line-height: 1;
+    color: var(--teal); font-weight: 500; letter-spacing: -0.02em; }
+  .case-metric-label { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+  .case-content h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.6rem; line-height: 1.2;
+    font-weight: 500; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.01em; }
+  .case-content p { font-size: 0.98rem; line-height: 1.7; color: var(--text); margin-bottom: 1rem; }
+  .case-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.25rem; }
+  .case-stack span { font-size: 11px; color: var(--muted); background: var(--cream);
+    border: 1px solid var(--line); padding: 4px 10px; border-radius: 100px; }
+
+  .experience { background: var(--cream-light); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .timeline { margin-top: 3rem; position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 12px; bottom: 12px;
+    width: 1px; background: var(--line); }
+  .role { position: relative; padding-left: 2.5rem; padding-bottom: 2.5rem; }
+  .role:last-child { padding-bottom: 0; }
+  .role::before { content: ''; position: absolute; left: 0; top: 8px;
+    width: 15px; height: 15px; border-radius: 50%;
+    background: var(--cream); border: 2px solid var(--teal); }
+  .role.current::before { background: var(--teal); box-shadow: 0 0 0 4px var(--teal-pale); }
+  .role-header { display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+  .role-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.35rem;
+    font-weight: 500; color: var(--ink); letter-spacing: -0.01em; }
+  .role-dates { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .role-org { font-size: 14px; color: var(--teal); font-weight: 500; margin-bottom: 0.85rem; }
+  .role p { font-size: 0.96rem; line-height: 1.7; color: var(--text); max-width: 720px; }
+
+  .beyond-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  @media (max-width: 820px) { .beyond-grid { grid-template-columns: 1fr; } }
+  .leadership-card { background: var(--ink); color: var(--cream);
+    border-radius: var(--radius); padding: 2.5rem; }
+  .leadership-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.7rem;
+    line-height: 1.2; font-weight: 500; color: var(--cream);
+    letter-spacing: -0.01em; margin-bottom: 1rem; }
+  .leadership-tag { display: inline-block; background: rgba(157, 225, 203, 0.15); color: var(--teal-soft);
+    font-size: 11px; font-weight: 500; padding: 5px 12px;
+    border-radius: 100px; letter-spacing: 0.04em; margin-bottom: 1rem; }
+  .leadership-card p { font-size: 0.98rem; line-height: 1.7; color: rgba(245, 239, 230, 0.8); margin-bottom: 1rem; }
+  .leadership-card p:last-of-type { margin-bottom: 0; }
+  .program-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.25rem; }
+  .program-pills span { background: rgba(157, 225, 203, 0.12); color: var(--teal-soft);
+    font-size: 12px; font-weight: 500; padding: 6px 12px;
+    border-radius: 100px; letter-spacing: 0.02em; }
+  .hobbies-card { background: var(--teal); color: var(--cream);
+    border-radius: var(--radius); padding: 2.5rem;
+    display: flex; flex-direction: column; justify-content: space-between; }
+  .hobbies-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.7rem;
+    line-height: 1.2; font-weight: 500; color: var(--cream);
+    letter-spacing: -0.01em; margin-bottom: 1rem; }
+  .hobbies-card p { font-size: 0.98rem; line-height: 1.7;
+    color: rgba(245, 239, 230, 0.85); margin-bottom: 1.5rem; }
+  .hobbies-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hobbies-list span { background: rgba(245, 239, 230, 0.15); color: var(--cream);
+    font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 100px; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem; margin-top: 3rem; }
+  .skill-card { background: var(--cream-light); border-radius: var(--radius);
+    border: 1px solid var(--line); padding: 1.75rem; }
+  .skill-card h4 { font-size: 13px; color: var(--teal); font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1rem; }
+  .skill-card p { font-size: 0.95rem; color: var(--text); line-height: 1.65; }
+
+  .contact { text-align: center; padding: 7rem 0; }
+  .contact h2 { font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1;
+    font-weight: 500; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }
+  .contact h2 em { font-style: italic; color: var(--teal); }
+  .contact p { font-size: 1.1rem; color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; }
+  .contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  footer { border-top: 1px solid var(--line); padding: 2rem 0;
+    text-align: center; color: var(--subtle); font-size: 13px; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--teal); }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">AK</span>
+      <span class="logo-name">Akshita Khurana</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#beyond">Beyond work</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Program Manager</p>
+    <h1>I lead programs where AI, cloud and <em>ambiguity</em> collide.</h1>
+    <p class="hero-lede">12+ years building delivery operating models for enterprise programs that put customers and end users at the center. Currently leading GenAI engagements at Intact Financial.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary">See my work →</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Experience</div>
+        <div class="stat-value">12+ <span class="stat-suffix">years</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">AI use cases shipped</div>
+        <div class="stat-value">39</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Users enabled</div>
+        <div class="stat-value">1000+</div>
+      </div>
+      <div class="stat-card feature">
+        <div class="stat-label">Currently</div>
+        <div class="stat-value">Leading GenAI delivery at Intact</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="container">
+    <p class="section-eyebrow">About</p>
+    <h2 class="section-title">Programs are people, process and the discipline to keep both moving.</h2>
+    <div class="about-grid" style="margin-top: 3rem;">
+      <div class="about-meta">
+        <div class="about-meta-item">
+          <div class="about-meta-label">Currently</div>
+          <div class="about-meta-value"><strong>Program Manager, Intact Financial</strong><br>Leading GenAI delivery</div>
+        </div>
+        <div class="about-meta-item">
+          <div class="about-meta-label">Education</div>
+          <div class="about-meta-value"><strong>Master of Management Sciences</strong><br>University of Waterloo</div>
+        </div>
+        <div class="about-meta-item">
+          <div class="about-meta-label">Certifications</div>
+          <div class="about-meta-value">PMP · PSM · PSPO</div>
+        </div>
+        <div class="about-meta-item">
+          <div class="about-meta-label">Focus areas</div>
+          <div class="about-meta-value">AI &amp; cloud delivery, change management, enterprise governance</div>
+        </div>
+      </div>
+      <div class="about-prose">
+        <p>I'm a Program Manager based in Canada, with twelve years of experience leading enterprise programs across <strong>AI, data and cloud</strong>. Most recently, I've been building the delivery operating model for GenAI at Intact, partnering with senior leadership to turn AI strategy into shipped outcomes for the customers and end users who rely on those systems every day.</p>
+        <p>I'm at my best where ambiguity, cross-functional dependencies and executive visibility meet. The work I'm proudest of isn't a single launch. It's the operating cadence that lets a portfolio of concurrent initiatives keep shipping without burning out the people doing the work, while keeping the user experience front and center.</p>
+        <p>Outside the day job, I serve as a board member supporting <strong>Women in Agile</strong> across marketing, conference allyship and the podcast program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="work">
+  <div class="container">
+    <p class="section-eyebrow">Selected Work</p>
+    <h2 class="section-title">A few programs I've led end-to-end.</h2>
+
+    <div class="case-grid">
+
+      <article class="case">
+        <div class="case-meta">
+          <span class="case-tag">GenAI · Enterprise</span>
+          <div class="case-metric">20%<div class="case-metric-label">delivery throughput uplift across AI portfolio</div></div>
+          <div class="case-org">Intact · 2024 – Present</div>
+        </div>
+        <div class="case-content">
+          <h3>Building the GenAI delivery operating model</h3>
+          <p>Translated AI strategy into an integrated portfolio across the GenAI Platform and AI Productivity squads, partnering directly with data scientists, ML engineers and business sponsors. Set up the governance cadence, prioritization framework and executive reporting rhythm that let leadership steer concurrent workstreams from one operating layer.</p>
+          <p>Drove rollout of GenAI-enabled engineering workflows that <strong>reduced code review and backlog refinement time by over 50%</strong>, and shipped production AI solutions on Claude, OpenAI, Bedrock and open-source models — putting end users at the center of every delivery.</p>
+          <div class="case-stack">
+            <span>Program governance</span><span>PI planning</span><span>GenAI</span><span>SDLC automation</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-meta">
+          <span class="case-tag">Disaster Recovery</span>
+          <div class="case-metric">Enterprise<div class="case-metric-label">resilience ownership across cloud and data platforms</div></div>
+          <div class="case-org">Intact · 2024 – Present</div>
+        </div>
+        <div class="case-content">
+          <h3>Disaster Recovery strategy alignment</h3>
+          <p>Led enterprise Disaster Recovery strategy alignment across cloud and data platforms, defining clear resilience ownership for critical systems serving thousands of internal users. Worked across platform, data and engineering teams to map dependencies, agree recovery objectives and embed continuity controls into the operating model.</p>
+          <p>The result was a defensible recovery posture for the platforms that customer-facing applications depend on, with executive-level visibility into where risk lived and who owned remediation.</p>
+          <div class="case-stack">
+            <span>DR strategy</span><span>Resilience ownership</span><span>Cross-platform</span><span>Risk controls</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-meta">
+          <span class="case-tag">Change &amp; Adoption</span>
+          <div class="case-metric">40%<div class="case-metric-label">reduction in post-launch support demand</div></div>
+          <div class="case-org">Intact · 2020 – Present</div>
+        </div>
+        <div class="case-content">
+          <h3>Change management, communication and adoption of AI use cases</h3>
+          <p>Directed enterprise change and adoption strategy across multiple AI use cases impacting <strong>1000+ users</strong>, from data scientists and actuaries to analytics teams and business end users. Built tailored communications, training and self-service enablement for each user community so adoption stuck after go-live.</p>
+          <p>Reduced post-launch support demand by <strong>40%</strong> while improving day-to-day operational efficiency and giving users a clear, supported path into the new tools.</p>
+          <div class="case-stack">
+            <span>Change management</span><span>Communications</span><span>Training &amp; enablement</span><span>Self-service</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-meta">
+          <span class="case-tag">ATT · Actuarial Modernization</span>
+          <div class="case-metric">300+<div class="case-metric-label">actuaries modernized onto cloud-based analytics</div></div>
+          <div class="case-org">Intact · 2020 – 2023</div>
+        </div>
+        <div class="case-content">
+          <h3>ATT — actuarial transformation from SAS to Databricks</h3>
+          <p>Led the ATT program, transitioning <strong>300+ actuaries</strong> from legacy SAS tooling to cloud-based data platforms (Databricks, Snowflake). Owned the end-to-end program: capability roadmap, sequencing of pricing and risk workstreams, vendor partnership and the change journey for a deeply technical user community.</p>
+          <p>The result: a more scalable, AI-ready actuarial environment serving pricing and risk functions, with users equipped to work natively in cloud rather than recreating legacy patterns.</p>
+          <div class="case-stack">
+            <span>SAS → Databricks</span><span>Snowflake</span><span>Actuarial modernization</span><span>Pricing &amp; risk</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-meta">
+          <span class="case-tag">AI/ML Platform</span>
+          <div class="case-metric">39<div class="case-metric-label">production AI/ML use cases across 6 business domains</div></div>
+          <div class="case-org">Intact · 2020 – 2023</div>
+        </div>
+        <div class="case-content">
+          <h3>Enterprise AI/ML platform migration</h3>
+          <p>Orchestrated enterprise migration from legacy infrastructure to cloud-based AI/ML platforms, enabling <strong>39 production use cases across 6 business domains</strong> and supporting <strong>250+ data scientists</strong>. Increased deployment speed by <strong>50%</strong> and achieved 3–4x faster time to market for new models reaching end users.</p>
+          <p>Scaled the platform to process <strong>1.6M transactions and 600K predictive scores</strong> in production for the Quebec market, and strengthened security by reducing critical vulnerabilities by <strong>91% within two weeks</strong> — the kind of platform reliability that downstream customer experiences quietly depend on.</p>
+          <div class="case-stack">
+            <span>Cloud migration</span><span>MLOps</span><span>Platform reliability</span><span>Security</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-meta">
+          <span class="case-tag">Governance · Portfolio</span>
+          <div class="case-metric">Multi-million<div class="case-metric-label">dollar transformation programs governed end-to-end</div></div>
+          <div class="case-org">Intact · 2020 – Present</div>
+        </div>
+        <div class="case-content">
+          <h3>Enterprise governance and KPI-driven reporting</h3>
+          <p>Established governance standards and KPI-driven reporting frameworks across <strong>multi-million dollar transformation programs</strong>, improving execution transparency and leadership decision velocity across <strong>6+ business domains</strong>. Implemented structured planning cadences and portfolio prioritization across cross-functional AI teams of <strong>100+ contributors</strong>.</p>
+          <p>Managed multi-million dollar program budgets and strategic vendor partnerships, optimizing investment allocation while maintaining consistent on-time delivery. Delivered executive performance dashboards with real-time visibility into portfolio health, risks and dependencies.</p>
+          <div class="case-stack">
+            <span>Portfolio governance</span><span>KPI reporting</span><span>Budget management</span><span>Vendor partnerships</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="container">
+    <p class="section-eyebrow">Experience</p>
+    <h2 class="section-title">Twelve years across consulting, modernization and AI delivery.</h2>
+
+    <div class="timeline">
+      <div class="role current">
+        <div class="role-header">
+          <div class="role-title">Program Manager</div>
+          <div class="role-dates">Jan 2024 – Present</div>
+        </div>
+        <div class="role-org">Intact Financial Corporation</div>
+        <p>Lead GenAI program delivery and the operating model for the GenAI Platform and AI Productivity squads. Manage and coach a team of 5 program managers supporting 30+ engineers. Drive enterprise Disaster Recovery strategy alignment and SDLC automation. Recognized with the Best Ambassador Award for leadership excellence.</p>
+      </div>
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title">IT Project Manager</div>
+          <div class="role-dates">Jun 2020 – Dec 2023</div>
+        </div>
+        <div class="role-org">Intact Financial Corporation</div>
+        <p>Led enterprise AI platform modernization and large-scale cloud transformation. Managed a cross-functional team of 11. Owned the ATT actuarial modernization, the AI/ML platform migration and the Qlik-to-Power BI transition delivering 4 core underwriting dashboards.</p>
+      </div>
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title">Lead Business Analyst</div>
+          <div class="role-dates">Feb 2015 – Aug 2018</div>
+        </div>
+        <div class="role-org">Wipro Technologies — Aviva</div>
+        <p>Owned the product roadmap for the payment solutions platform. Led enterprise-wide Agile/Lean transformation. Built executive dashboards and value-realization metrics. Drove adoption among 500+ users on new system launches.</p>
+      </div>
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title">Business Analyst</div>
+          <div class="role-dates">Feb 2014 – Feb 2015</div>
+        </div>
+        <div class="role-org">Wipro Technologies — Aviva</div>
+        <p>Established governance and standardized reporting frameworks across active programmes. Instituted value-realization metrics aligning delivery outcomes with strategic and budgetary priorities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="beyond">
+  <div class="container">
+    <p class="section-eyebrow">Beyond Work</p>
+    <h2 class="section-title">What I bring outside the program plan.</h2>
+
+    <div class="beyond-grid">
+      <div class="leadership-card">
+        <span class="leadership-tag">Board Member</span>
+        <h3>Serving as a board member in Women in Agile</h3>
+        <p>I support the organization across three programs: <strong style="color: var(--cream);">marketing, conference allyship and the podcast</strong>. The work spans content and communications strategy, helping shape stakeholder-facing campaigns, and championing inclusive leadership in the broader Agile community.</p>
+        <p>I also founded and scaled an enterprise <strong style="color: var(--cream);">Agility Mentorship Program</strong> pairing 40+ leaders, achieving 96% satisfaction.</p>
+        <div class="program-pills">
+          <span>Marketing</span><span>Conference Allyship</span><span>Podcast</span>
+        </div>
+      </div>
+      <div class="hobbies-card">
+        <h3>Off the clock</h3>
+        <p>The same curiosity that pulls me into complex programs shows up in how I spend my off-hours — making things, moving through new places and noticing what most people walk past.</p>
+        <div class="hobbies-list">
+          <span>Painting</span><span>Sketching</span><span>Hiking</span><span>Travelling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container">
+    <p class="section-eyebrow">Capabilities</p>
+    <h2 class="section-title">How I show up to a program.</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Program &amp; Delivery</h4>
+        <p>Enterprise roadmap and prioritization, end-to-end program lifecycle, governance and operating cadence, executive communication, organizational change management.</p>
+      </div>
+      <div class="skill-card">
+        <h4>AI &amp; Innovation</h4>
+        <p>GenAI/LLM adoption strategy, agentic workflows, internal AI tooling, AI and data governance, productionization of research prototypes.</p>
+      </div>
+      <div class="skill-card">
+        <h4>Customer &amp; User Focus</h4>
+        <p>Change management, communications and adoption strategy, training and self-service enablement, stakeholder engagement across business and technical user communities.</p>
+      </div>
+      <div class="skill-card">
+        <h4>Methodologies</h4>
+        <p>Agile, Scrum, SAFe, Lean, hybrid Waterfall. PI planning, dependency management, capacity planning, risk and escalation.</p>
+      </div>
+      <div class="skill-card">
+        <h4>Technical Ecosystem</h4>
+        <p>Azure, AWS, Databricks, Snowflake, SageMaker, Bedrock, MLOps/CI-CD, SQL.</p>
+      </div>
+      <div class="skill-card">
+        <h4>Tools &amp; Analytics</h4>
+        <p>Jira (advanced), Confluence, Power BI, Tableau, Qlik, KPI/SLA dashboards, executive performance reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <p class="section-eyebrow">Let's talk</p>
+    <h2>Building something <em>complex</em>?<br>Let's talk shop.</h2>
+    <p>Always happy to chat about delivery, AI programs, customer success, or just to swap notes.</p>
+    <div class="contact-links">
+      <a href="mailto:a9khurana@uwaterloo.ca" class="btn btn-primary">Email me →</a>
+      <a href="https://www.linkedin.com/in/akshitakhurana/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Akshita Khurana · Built with care · <a href="mailto:a9khurana@uwaterloo.ca">a9khurana@uwaterloo.ca</a></p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 8) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  const reveals = document.querySelectorAll('.case, .role, .skill-card, .leadership-card, .hobbies-card');
+  reveals.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
